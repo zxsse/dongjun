@@ -1,0 +1,5 @@
+package µø¡ÿ;
+
+public class squar {
+
+}
