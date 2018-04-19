@@ -1,0 +1,16 @@
+package Study.exam;
+
+public class MainStringExam 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		String s = "example.avi";
+		
+		System.out.println(s.endsWith("mp4"));
+		System.out.println(s.endsWith("wmv"));
+		System.out.println(s.endsWith("avi"));
+	}
+
+}

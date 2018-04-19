@@ -1,0 +1,18 @@
+package Study.student;
+
+public class main
+{
+
+	public static void main(String[] args)
+	{
+		/* 1. Student클래스의 객체 s를 new 연산자를 통해 생성 할 때  매개변수로
+		 * 		이름,학년,반,번호,국어,영어,수학을 넘겨준다	
+		 * 2. 객체 s를통해 만들어놓은 print() 메소드 호출하여 결과를 확인
+		 */
+		
+		Student s = new Student("김동준", 2, 5, 3, 85.3, 92, 88.3);
+		s.printStudent();
+	
+	}
+
+}

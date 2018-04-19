@@ -1,0 +1,13 @@
+package Study.string;
+
+public class StringMainTest 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		String s= "Hello World";
+		System.out.println(s.charAt(0));//원하는번지의 값을 확인하고싶을 때
+	}
+
+}

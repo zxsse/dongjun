@@ -1,0 +1,39 @@
+package Study.student;
+
+public class StudentManager 
+{
+	/*	1. 필요한멤버변수
+	 * 	1.1학생 클래스의 배열
+	 * 	1.2학생의 최대 수를 저장하는 변수 : int 
+	 * 	1.3현재 저장된 학생의 수 : int
+	 */
+	
+     private Student [] std;
+     private int maxCount;
+     private int nowCount;
+     
+     
+     
+     
+     /*	2. getter setter 생성      */
+	public int getMaxCount() {
+		return maxCount;
+	}
+	public void setMaxCount(int maxCount) {
+		this.maxCount = maxCount;
+	}
+	public int getNowCount() {
+		return nowCount;
+	}
+	public void setNowCount(int nowCount) {
+		this.nowCount = nowCount;
+	}
+    		
+     
+	/*	3.생성자
+	 * 
+	 */
+
+	
+	
+}

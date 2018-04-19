@@ -1,0 +1,69 @@
+package Study;
+
+public class main
+{
+
+	public static void main(String[] args) 
+	{
+			A a = new A(10,20);
+			A a1 = (A)a.clone(); // A가 Object기때문에 형변환을 해야한다.
+			//클래스A의 멤버 a : 0~ 10000값을 가짐
+			//현제 클래스 A로 생성된 객체가 10만개다  
+			System.out.println(a.equals(a1));
+			a.hashCode();
+			a1.a =30;
+			System.out.println(a);
+			System.out.println(a.toString()); //호출할대 이렇게 호출
+			
+			
+	}	
+}
+class A implements Cloneable   //clone을 실행시키려면 인터페이스를 추가시켜야한다.
+{
+	int a;
+	int b;
+	A(int a, int b)
+	{
+		this.a =a;
+		this.b =b;
+
+	
+	
+
+	}
+
+	@Override
+	public boolean equals(Object obj) //문자열 비교
+	{	
+		if(obj != null && obj instanceof A) //instanceof 형변환이가능한지
+		{	//형변환 (A)를해야줘야한다. ()는 .보다 우선순위가 낮음
+		    A tmp = (A)obj;
+	          if(this.a == tmp.a && this.b == tmp.b);
+	      	return true;
+		}
+		return false;
+	}	
+	@Override
+	public int hashCode()   // 해쉬태그같은개념(정수형)
+	{	//a : 0~10000값을 가짐
+		return a%100;
+	}
+	public String toString()
+	{
+		return this.getClass().getName()+"@"+Integer.toHexString(this.hashCode());
+	}
+	
+	public Object clone() //복사하는 메서드
+	{
+		Object obj = null;
+		try 
+		{
+			obj=super.clone();  //예외가 발생 할 수 있어서 
+		} catch (CloneNotSupportedException e)
+			{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
+		return obj;
+	}
+}

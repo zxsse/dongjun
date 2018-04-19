@@ -1,0 +1,29 @@
+package Study.string;
+
+import java.util.Scanner;
+
+public class StringMainTest 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		String s= "Hello World";
+		System.out.println(s.charAt(0));//원하는번지의 값을 확인하고싶을 때
+		
+		/*
+		Scanner scan = new Scanner(System.in); //문자 입력받을 때
+		char op = scan.next().charAt(0); //문자열 하나받을때(주로 Scanner를 사용했을 때)
+		*/
+		
+		s = s + "!"; //concat()메소드와 동일한동작함 (이어붙이기)
+		System.out.println(s);
+		
+		System.out.println(s.contains("Hello")); //contains란 문자열이 포함되어있는지 확인  true또는 false
+		
+		s= "Hello.txt";
+		System.out.println(s);
+		System.out.println(s.endsWith("txt"));
+	}
+
+}

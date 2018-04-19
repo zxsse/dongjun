@@ -1,0 +1,31 @@
+package Study.exam;
+
+import java.util.Scanner;
+
+public class MainStringExam 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		String s = "example.mp4";
+		Scanner scan = new Scanner(System.in);
+		char op = scan.next().charAt(0);
+		
+		if(s.endsWith("mp4") || s.endsWith("wmv") || s.endsWith("avi"))
+		{
+			System.out.println("동영상 파일이다.");
+		}
+		
+		
+		/*System.out.println(s.endsWith("mp4"));
+		System.out.println(s.endsWith("wmv"));
+		System.out.println(s.endsWith("avi"));
+		
+		System.out.println(s.indexOf("mp4"));
+		System.out.println(s.indexOf("wmv"));
+		System.out.println(s.indexOf("avi"));
+		*/
+	}
+
+}

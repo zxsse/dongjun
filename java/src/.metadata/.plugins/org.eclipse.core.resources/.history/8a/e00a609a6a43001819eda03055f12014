@@ -1,0 +1,53 @@
+package Study;
+
+public class main
+{
+
+	public static void main(String[] args) 
+	{
+			A a = new A(10,20);
+			A a1 = new A(10,20);
+			//클래스A의 멤버 a : 0~ 10000값을 가짐
+			//현제 클래스 A로 생성된 객체가 10만개다  
+			System.out.println(a.equals(a1));
+			a.hashCode();
+			a1.a =30;
+			System.out.println(a);
+			System.out.println(a.toString()); //호출할대 이렇게 호출
+			
+	}	
+}
+class A
+{
+	int a;
+	int b;
+	A(int a, int b)
+	{
+		this.a =a;
+		this.b =b;
+
+	
+	
+
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{	
+		if(obj != null && obj instanceof A) //instanceof 형변환이가능한지
+		{	//형변환 (A)를해야줘야한다. ()는 .보다 우선순위가 낮음
+		    A tmp = (A)obj;
+	          if(this.a == tmp.a && this.b == tmp.b);
+		}
+		return false;
+	}	
+	@Override
+	public int hashCode()   // 해쉬태그같은개념
+	{	//a : 0~10000값을 가짐
+		return a%100;
+	}
+	public String toString()
+	{
+		return this.getClass().getName()+"@"+Integer.toHexString(this.hashCode());
+	}
+}

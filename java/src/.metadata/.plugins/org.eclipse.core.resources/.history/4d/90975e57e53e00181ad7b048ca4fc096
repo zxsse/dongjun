@@ -1,0 +1,48 @@
+package Study.student;
+
+public class main
+{
+
+	public static void main(String[] args)
+	{
+		/* 1. Student클래스의 객체 s를 new 연산자를 통해 생성 할 때  매개변수로
+		 * 		이름,학년,반,번호,국어,영어,수학을 넘겨준다	
+		 * 2. 객체 s를통해 만들어놓은 print() 메소드 호출하여 결과를 확인
+		 * 3. 객체 s를 통해 만들어놓은  modifyStudent 메소드를  호출하여 정보를 수정하는데
+		 * 	    매개변수로 이름,학년,반 ,국어,영어,수학을 넘겨준다.
+		 * 4. 객체s를 통해만들어놓은 print()메소드  호출하여 결과확인
+		 */
+		
+		Student s = new Student("김동준", 2, 5, 3, 85.3, 92, 88.3);
+		s.printStudent();
+		//3	
+		s.modifyStudent("박가연", 2, 3, 23, 42, 35, 60);
+		System.out.println("정보 수정 후");
+		//4
+		s.printStudent();
+		
+		/* 1.StudentManager클래스의 객체(sm)를 생성하는데
+		 * 	 학생의 정보를 10개 저장하도록 개게를 생성
+		 * 2.학생의 한명의 정보를 객체 sm이 가지고 있는
+		 * 	 insert메소드를 이용하여 저장
+		 * 3.학생들의 정보를 객체 sm이 가지고있는 print
+		 * 	 메소드를저장하여 출력
+		 *  4.1학년 1반 10번 겁색했을때 결과를 출력하는 코드 작성
+		 * 	 	객체 sm의 searchIndex메소드와 System.out.println 메소드를 이용하여 해당하는 번지출력
+		 */
+		
+		
+		StudentManager sm = new StudentManager(10);
+		sm.insert("박유연", 1, 2, 20, 40, 50, 35);
+		System.out.println("정보 추가"); 
+		sm.print();
+		System.out.println(sm.searchIndex(1, 2, 20)+"번지");  //4
+		
+		System.out.println("수정후");
+		sm.modify(2, 3, 23, "박가연" , 82, 75, 95);
+		sm.modify(1, 2, 20, "박유연" , 90, 68, 70);
+		
+		
+	}
+
+}

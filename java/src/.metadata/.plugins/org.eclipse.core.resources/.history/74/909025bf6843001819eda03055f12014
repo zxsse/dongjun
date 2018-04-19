@@ -1,0 +1,43 @@
+package Study;
+
+public class main
+{
+
+	public static void main(String[] args) 
+	{
+			A a = new A(10,20);
+			A a1 = new A(10,20);
+			System.out.println(a.equals(a1));
+			a.hashCode();
+	}	
+}
+class A
+{
+	int a;
+	int b;
+	A(int a, int b)
+	{
+		this.a =a;
+		this.b =b;
+
+	
+	
+
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{	
+		if(obj != null && obj instanceof A) //instanceof 형변환이가능한지
+		{	
+			A tmp = (A)obj;
+			if(this.a = tmp.a && this.b == tmp.b;  //형변환 (A)를해야줘야한다. ()는 .보다 우선순위가 낮음
+			return true;
+		}
+		return false;
+	}	
+	public int hashCode()
+	{
+		return 0;
+	}
+}

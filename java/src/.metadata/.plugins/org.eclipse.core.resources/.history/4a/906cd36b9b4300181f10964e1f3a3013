@@ -1,0 +1,30 @@
+package Study.LottoHashSet;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Main
+{
+
+	public static void main(String[] args)
+	{	
+		int a = 1;
+		int b = 45;
+		
+		// TODO Auto-generated method stub
+		HashSet<Integer> hs = new HashSet<Integer>();
+		for(int size = 0; size< 6 ; size++)
+		{
+			if(hs.size() != 6)
+			hs.add((int)(Math.random()*(b-a+1)+a));
+		
+		}
+		
+		Iterator<Integer> it = hs.iterator();
+		while(it.hasNext())
+		{
+			System.out.println((Integer)it.next());
+		}
+	}
+
+}
