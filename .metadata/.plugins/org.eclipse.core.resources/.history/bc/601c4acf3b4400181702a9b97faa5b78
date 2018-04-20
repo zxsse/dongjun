@@ -1,0 +1,29 @@
+package study.set.ex1;
+
+import java.util.HashSet;
+
+public class SetMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		HashSet<Integer> hs = new HashSet<Integer>();
+		hs.add(10);
+		hs.add(10);
+		hs.add(10);
+		for(Integer tmp : hs)
+		{
+			System.out.println(tmp);
+		}
+		hs.add(new Integer(10));
+		hs.add(new Integer(10));
+		hs.add(new Integer(10));
+		for(Integer tmp : hs)
+		{
+			System.out.println(tmp);
+		}
+		
+	}
+
+}
