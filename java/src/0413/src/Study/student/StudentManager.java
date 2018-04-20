@@ -117,7 +117,7 @@ public class StudentManager
 		int i;
 		for(i=0 ; i<nowCount ; i++)
 		{
-			if(grade == std[i].getGrade() && classNuber == std[i].getClassNumber() &&  number == std[i].getNumber())
+			if(grade == std[i].getGrade() && classNumber == std[i].getClassNumber() &&  number == std[i].getNumber())
 			 return i;
 		}    
 		

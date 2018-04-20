@@ -1,0 +1,33 @@
+package study.student.collection;
+
+public class StudentManager 
+{
+	private Student [] std;
+	private int maxCount;
+	private int nowCount;
+	public Student[] getStd() {
+		return std;
+	}
+	public void setStd(Student[] std) {
+		this.std = std;
+	}
+	public int getMaxCount() {
+		return maxCount;
+	}
+	public void setMaxCount(int maxCount) {
+		this.maxCount = maxCount;
+	}
+	public int getNowCount() {
+		return nowCount;
+	}
+	public void setNowCount(int nowCount) {
+		this.nowCount = nowCount;
+	}
+	
+	
+	public StudentManager()
+	{
+	
+	}
+	
+}

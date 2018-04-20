@@ -1,0 +1,77 @@
+package study.student.collection;
+
+
+public class StudentManager 
+{
+	private Student [] std;
+	private int maxCount;
+	private int nowCount;
+	public Student[] getStd() {
+		return std;
+	}
+	public void setStd(Student[] std) {
+		this.std = std;
+	}
+	public int getMaxCount() {
+		return maxCount;
+	}
+	public void setMaxCount(int maxCount) {
+		this.maxCount = maxCount;
+	}
+	public int getNowCount() {
+		return nowCount;
+	}
+	public void setNowCount(int nowCount) {
+		this.nowCount = nowCount;
+	}
+	
+	
+	public StudentManager()
+	{
+	
+	}
+	public StudentManager(int size) throws RuntimeException
+	{
+		if(size <= 0)
+			throw new RuntimeException("배열의 크기 0 or 음수 불가 ");
+		 maxCount = size;
+		 std = new Student[maxCount];   //메인에서 값을 지정하여 넣을 수 있도록한다.
+	}
+	public void insert(String name, int grade, int classNumber, int number, double kor, double eng, double math) 
+	{
+		if(nowCount == maxCount)
+		throw new RuntimeException("더이상 저장 할 수 없습니다.");
+		if(searchIndex(grade, classNumber, number) != -1)
+			throw new RuntimeException("이미 해당하는" + "학생의 정보가 있습니다.");
+		std[nowCount++] = new Student(name, grade, classNumber, number, kor, eng, math); 
+	}
+	private int searchIndex(int grade, int classNumber, int number)
+	{
+		// TODO Auto-generated method stub
+		int i;
+		for(i=0 ; i<nowCount ; i++)
+		{
+			if(grade == std[i].getGrade() && classNumber == std[i].getClassNumber() &&  number == std[i].getNumber())
+			 return i;
+		}    
+		return -1;
+		
+	}
+	public void print()
+	{
+		int i ;
+		for( i = 0; i<= nowCount-1 ; i++ )
+		{
+			std[i].printStudent();
+		}	
+
+	}
+	
+		
+
+
+
+
+
+
+}

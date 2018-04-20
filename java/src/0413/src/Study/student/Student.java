@@ -94,20 +94,6 @@ public class Student
 	 */
 	
 	
-	public void printStudent()
-	{
-		System.out.println("----------------");
-		System.out.println(" 학생정보 출력 ");
-		System.out.println("학생이름 : " + name);
-		System.out.println("학생학년 : " + grade);
-		System.out.println("학생반 : " + classNumber);
-		System.out.println("학생번호 : " + number);
-		System.out.println("국어 성적 : " + kor);
-		System.out.println("영어성적  : " + eng);
-		System.out.println("수학성적  : " + math);
-		System.out.println("----------------");
-		
-	}
 	
 	public void modifyStudent(String name, int grade, int classNumber, int number, double kor, double eng, double math)
 	{

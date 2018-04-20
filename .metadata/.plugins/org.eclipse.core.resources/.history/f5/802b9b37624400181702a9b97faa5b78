@@ -1,0 +1,29 @@
+package study.student.collection;
+
+import java.util.HashSet;
+
+public class StudentMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Student std = new Student();
+		std.setClassNumber(5).setGrade(1).setName("±Ëµø¡ÿ").setNumber(3).setKor(80).setEng(95).setMath(100);
+		//System.out.println(std);
+		
+		
+		Student std1 = new Student(null, 1, 1,1,1, 0, 0);
+		std.setClassNumber(5).setGrade(1).setName("¿”¡§¿±").setNumber(3).setKor(80).setEng(95).setMath(100);
+		//System.out.println(std1);
+		
+		HashSet<Student> hs = new HashSet();
+		hs.add(std);
+		hs.add(std1);
+		for(Student tmp : hs)
+		{
+			System.out.println(tmp);
+		}
+	}
+
+}

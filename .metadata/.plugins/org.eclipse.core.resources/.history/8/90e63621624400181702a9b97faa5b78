@@ -1,0 +1,19 @@
+package study.student.collection;
+
+public class StudentMain 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Student std = new Student();
+		std.setClassNumber(5).setGrade(1).setName("±Ëµø¡ÿ").setNumber(3).setKor(80).setEng(95).setMath(100);
+		//System.out.println(std);
+		
+		
+		Student std1 = new Student();
+		std.setClassNumber(5).setGrade(1).setName("±Ëµø¡ÿ").setNumber(3).setKor(80).setEng(95).setMath(100);
+		//System.out.println(std1);
+	}
+
+}
