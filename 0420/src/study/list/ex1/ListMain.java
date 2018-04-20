@@ -1,0 +1,53 @@
+package study.list.ex1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ListMain
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		ArrayList<Integer> alist=new ArrayList();
+		alist.add(100);
+		alist.add(40);
+		alist.add(5);
+		alist.add(1000);
+		
+		for(int i =0; i<alist.size();i++)
+		{
+			System.out.println(alist.get(i));
+		}
+		System.out.println("---------");
+		
+		
+		
+		
+		alist.remove(0);   //0 번째 지워라 그래서 add 100이 지워진다.
+		
+		
+		
+		
+		Iterator it = alist.iterator();
+		//현제위치 -> 100 , 40 ,5 ,1000 반복자를만들어준다.
+		while(it.hasNext())
+		{
+			int num = (Integer)it.next(); // 위치를 다음위치로 바뀌고 해당하는값을 넘겨줘라 
+			System.out.println(num);   // 100 ->40 ,5,1000
+			
+		}
+		System.out.println("-----------");
+		for(Integer tmp : alist)  //향상된포문 단점 :직접수정할수없다.
+		{
+			System.out.println(tmp);
+		}
+	}
+
+}
+class Student
+{
+	String name;
+	int grade;
+	int classNum;
+}
