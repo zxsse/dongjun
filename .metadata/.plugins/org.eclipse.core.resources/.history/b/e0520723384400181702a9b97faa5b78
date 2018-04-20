@@ -16,8 +16,8 @@ public class ListMain
 		alist.add(1000);
 		
 		ArrayList<Integer> alist2 = new ArrayList();
-		alist2.addAll(alist); // 모두출력
-		alist2.removeAll(alist); //모두지운다.
+		alist2.addAll(alist);
+		
 		
 		for(int i =0; i<alist.size();i++)
 		{
@@ -52,7 +52,7 @@ public class ListMain
 		{
 			System.out.println(tmp);
 		}
-		System.out.println(alist2);  //일자로나열
+		System.out.println(alist2);
 	}
 
 }
