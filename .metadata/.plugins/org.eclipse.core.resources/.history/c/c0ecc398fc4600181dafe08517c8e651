@@ -1,0 +1,22 @@
+package FlowEx;
+
+import java.util.Scanner;
+
+public class Main 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("가위,바위,보 중 하나를 입력하세요");
+		
+		Scanner scanner = new Scanner(System.in); //화면을 통해서 입력받은  숫자를 user에 저장
+		
+		int user = 	
+		int com = (int)(Math.random() * 3) + 1; // 1,2,3 중 하나가 com에 저장됨
+		
+		System.out.println("당신은 " + user + "입니다");
+		
+	}
+
+}
