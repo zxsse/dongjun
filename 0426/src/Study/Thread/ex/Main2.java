@@ -1,0 +1,149 @@
+package Study.Thread.ex;
+
+//Thread 클래스를상속하는방법
+//Runnable 클래스 구현하는방법
+// -run에서 구현하면된다.
+
+import java.util.Scanner;
+
+
+
+public class Main2 
+{
+	static boolean data = false; //문자를 받을 변수
+	
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Thread m3 = new Thread(new MyTread4());
+		m3.start();
+		
+		for(int i = 1; i<=5; i++)
+		{
+			try 
+			{
+				Thread.sleep(100);
+			} catch (InterruptedException e) 
+			{
+				// TODO 자동 생성된 catch 블록
+				e.printStackTrace();
+			}
+		}
+		try 
+		{
+			m3.join(); // MyThead3 먼저하고 main
+		} catch (InterruptedException e1)
+		{
+			// TODO 자동 생성된 catch 블록
+			e1.printStackTrace();
+		}
+		System.out.println("main 쓰레드 다시시작");
+		m3 = new Thread(new MyTread4());
+		m3.start();
+		try 
+		{
+			m3.join();
+		} catch (InterruptedException e)
+		{
+			// TODO 자동 생성된 catch 블록
+			e.printStackTrace();
+		}
+		System.out.println("main 쓰레드 종료");
+		
+		/*Thread m2 = new Thread(new MyTread3());
+		m2.setDaemon(true);
+		m2.start();*/
+		
+		/*for(int i=0; i<20 ; i++)
+		{
+			System.out.println(i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO 자동 생성된 catch 블록
+				e.printStackTrace();
+			}
+			if(i == 9)
+				data = true;
+		}*/
+		
+		
+		/*data = JOptionPane.showInputDialog("문자열입력");
+		System.out.println("입력받은문자열 ㅣ" + data); //문자입력  할 수 있게 하는 것*/
+		
+		
+		
+		
+		
+		/*Thread m2 = new Thread(new MyTread2());
+		
+		
+	
+		m2.run();*/
+		
+		
+		/*for(int i = 0; i < 10000 ; i++)
+		{
+			System.out.println("B");
+			try 
+			{
+				Thread.sleep(500);
+			}
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			
+			
+		}*/
+	}
+
+}
+
+class MyTread3 implements Runnable
+{
+
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		while(true)
+		{
+			
+			try
+			{		
+				Thread.sleep(3000);
+			}
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			if(Main2.data == true)
+			{
+				System.out.println("파일을 자동저장합니다.");
+			}
+		}
+	}
+	
+}
+
+class MyTread4 implements Runnable
+{
+
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		for(int i= 0 ; i <= 10 ;i++ )
+		{
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO 자동 생성된 catch 블록
+				e.printStackTrace();
+			}
+		}
+		System.out.println("MyThread3 종료합니다.");
+	}
+	
+}

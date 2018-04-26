@@ -10,18 +10,25 @@ import javax.swing.JOptionPane;
 
 public class Main 
 {
-	static String data=""; //문자를 받을 변수
+	static boolean data = false; //문자를 받을 변수
 	
-	public static void main(String[] args) 
+	//public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
 		MyTread  m1 = new MyTread();
+		Thread m2 = new Thread(new MyTread2());
+		m1.setPriority(10); //******우선순위********
+		m2.setPriority(1);
+		
 		m1.start();  //start는 둘다실행  
 		 			 //run은 run 실행  다하고 main 실행 
+		m2.start();
 		
 		
-		data = JOptionPane.showInputDialog("문자열입력");
-		System.out.println("입력받은문자열 ㅣ" + data); //문자입력  할 수 있게 하는 것
+		
+		
+		/*data = JOptionPane.showInputDialog("문자열입력");
+		System.out.println("입력받은문자열 ㅣ" + data); //문자입력  할 수 있게 하는 것*/
 		
 		
 		
@@ -51,24 +58,30 @@ public class Main
 	}
 
 }
+
 class MyTread extends Thread
 {
 	public void run() 
 	{
 		// TODO Auto-generated method stub
-		for(int i= 0; i <10 ; i++)
+		for(int i= 0; i <1000 ; i++)
 		{
-			try 
+			
+			System.out.print("-");
+		
+			/*try 
 			{
 				if(Main.data.compareTo("q")==0) //q이면 멈춘다 static이라서 (Main.data이런식으로 불러준다)
 				break;
-				System.out.println(i);
-				Thread.sleep(1000);
+				
+				
+				
+				Thread.sleep(10);
 			}
 			catch (Exception e)
 			{
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 }
@@ -79,18 +92,19 @@ class MyTread2 implements Runnable
 	public void run() 
 	{
 		// TODO Auto-generated method stub
-		for(int i= 0; i <10000 ; i++)
+		for(int i= 0; i <1000 ; i++)
 		{
-			try 
+			System.out.print("|");
+			/*try 
 			{
 				
-				System.out.println("a");
-				Thread.sleep(1000);
+				
+				Thread.sleep(10);
 			}
 			catch (InterruptedException e)
 			{
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	

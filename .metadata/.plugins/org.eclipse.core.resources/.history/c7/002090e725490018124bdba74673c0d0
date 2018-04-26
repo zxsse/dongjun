@@ -1,0 +1,15 @@
+package Study.Gener.ex2;
+
+import javax.swing.JOptionPane;
+
+public class Main 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO 자동 생성된 메소드 스텁
+		String money = JOptionPane.showInputDialog("출금할 금액 : ");
+		System.out.println(money);
+	}
+
+}

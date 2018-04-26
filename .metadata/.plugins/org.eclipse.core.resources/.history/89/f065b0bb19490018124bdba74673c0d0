@@ -1,0 +1,94 @@
+package Study.Thread.ex;            //교제 667페이지
+
+//Thread 클래스를상속하는방법
+//Runnable 클래스 구현하는방법
+// -run에서 구현하면된다.
+
+import java.util.Scanner;
+
+
+
+public class Main3 
+{
+	
+	public static void main(String[] args) 
+	{
+		Runnable r = new MyTread5();
+		Thread th1 = new Thread(new Thread(r));  //Runnable값을 공유 받는다 
+		Thread th2 = new Thread(new Thread(r));
+		th1.start();  
+		th2.start(); 
+		
+		
+	}
+
+}
+
+
+class MyTread5 implements Runnable
+{
+	Integer balance = new Integer(3000);
+	@Override
+	public void run() 
+	{
+		// TODO 자동 생성된 메소드 스텁
+		while(balance > 0)
+		{
+			synchronized(this) //동기화 (실행 될 때 해당 쓰레드가 처리를해야 다음이진행된다 )
+					  // 예외가있을수 있기 때문에
+			{
+				if(balance > 0)
+				{
+					balance -= 1000;
+					System.out.println(balance);
+				}
+				try 
+				{
+					Thread.sleep(1000);
+				} catch (InterruptedException e)
+				{
+				
+					e.printStackTrace();
+				}
+			}
+			
+			
+		}
+	}
+	
+}
+class MyTread6 implements Runnable
+{
+	Integer balance = new Integer(3000);
+	@Override
+	public void run() 
+	{
+		// TODO 자동 생성된 메소드 스텁
+		while(balance > 0)
+		{
+			
+			withdraw();
+			
+			try 
+			{
+				Thread.sleep(1000);
+			} catch (InterruptedException e)
+			{
+			
+				e.printStackTrace();
+			}
+		
+			
+			
+		}
+	}
+	synchronized void withdraw()
+	{
+		if(balance>= 1000)
+		{
+			balance -= 1000;
+			System.out.println(balance);
+		}
+	}
+	
+}
