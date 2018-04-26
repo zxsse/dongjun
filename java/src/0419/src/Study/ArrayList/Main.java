@@ -20,6 +20,8 @@ public class Main {
 			System.out.println(al.get(i));  //값가져올때
 		}
 		int num = al.remove(1); //해당하는값을 제거 할 때
+		
+		
 		System.out.println("------------");
 		for(int i=0 ; i<al.size();i++)
 		{
@@ -30,6 +32,8 @@ public class Main {
 		ll.add(20);
 		ll.add(30);
 		System.out.println("------------");
+		 	
+		
 		for(int i=0 ; i<ll.size();i++)
 		{
 			System.out.println(ll.get(i));  //해당하는 번지의 값지우기

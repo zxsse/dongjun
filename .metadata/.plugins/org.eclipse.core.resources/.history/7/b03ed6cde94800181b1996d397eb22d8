@@ -1,0 +1,59 @@
+package Study.Thread.ex;
+
+//Thread 클래스를상속하는방법
+//Runnable 클래스 구현하는방법
+// -run에서 구현하면된다.
+
+import java.util.Scanner;
+
+public class Main 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+class MyTread extends Thread
+{
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		for(int i= 0; i <10000 ; i++)
+		{
+			try 
+			{
+				System.out.println(i);
+				Thread.sleep(10000);
+			}
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}
+class MyTread2 implements Runnable
+{
+
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		for(int i= 0; i <10000 ; i++)
+		{
+			try 
+			{
+				System.out.println("a");
+				Thread.sleep(10000);
+			}
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+	
+}
